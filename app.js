@@ -32,8 +32,10 @@ apiServer.get("/somma", (req, res) => {
 });
 
 apiServer.get("/voti", (req, res)=> {
-    var arrayVoti = [{"data": "l'altro ieri", "voto": "9", "descrizione" : "tecnologia"}];
-    res.send(arrayVoti);
+    if(req.query.a){
+        var arrayVoti = [{"data": "l'altro ieri", "voto": "9", "descrizione" : "tecnologia"}];
+        res.send(arrayVoti);
+    }
 });
 
 // riceve in ingresso username e password e invia un messaggio "benvenuto [username]"
