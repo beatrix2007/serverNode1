@@ -12,7 +12,7 @@ apiServer.listen(port, () => {
 
 apiServer.get("/nome", (req, res) => {
     console.log("ho ricevuto una get su nome");
-    res.send("ciao, il nome del server è: NODEPOGLIANI");
+    res.send("ciao, il nome del server è: NODEBEATRICE");
 });
 
 apiServer.get("/somma", (req, res) => {
@@ -29,6 +29,11 @@ apiServer.get("/somma", (req, res) => {
         res.send("parametri non corretti");
     }
 
+});
+
+apiServer.get("/voti", (req, res)=> {
+    var arrayVoti = [{"data": "l'altro ieri", "voto": "9", "descrizione" : "tecnologia"}];
+    res.send(arrayVoti);
 });
 
 // riceve in ingresso username e password e invia un messaggio "benvenuto [username]"
